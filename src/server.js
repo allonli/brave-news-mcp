@@ -24,9 +24,10 @@ server.tool(
     extra_snippets: z.boolean().optional(),
     goggles: z.array(z.string()).optional(),
     operators: z.boolean().optional(),
+    token: z.string().optional().describe('Brave News API X-Subscription-Token'),
   },
   async (args) => {
-    const raw = await searchNews(args);
+    const raw = await searchNews(args, args.token);
     const summary = summarizeResults(raw);
     return {
       content: [
@@ -38,4 +39,3 @@ server.tool(
 );
 
 export { server };
-

@@ -81,6 +81,12 @@ mcp:
 - 发布后可通过 ModelScope 的托管检测：
   - `command: npx`, `args: ["brave-news-mcp@latest"]`
 
+**在 Playground 传入令牌（无环境变量时）**
+- 工具 `brave_news_search` 支持可选参数 `token`。当服务端未设置环境变量 `BRAVE_NEWS_TOKEN` 时，可在调用参数中传入：
+  - 示例：
+    - `{"q":"munich","count":10,"search_lang":"en","token":"YOUR_BRAVE_NEWS_TOKEN"}`
+  - 该字段会作为 `X-Subscription-Token` 使用。
+
 **部署到 ModelScope**
 - 容器镜像（可选）：使用项目根目录 `Dockerfile`，入口 `node src/http-mcp.js`，端口 `8000`
 - 详细部署指引：见 `README-ModelScope.md`
