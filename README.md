@@ -8,7 +8,7 @@
   "mcpServers": {
     "brave-news-mcp": {
       "command": "npx",
-      "args": ["brave-news-mcp@latest"],
+      "args": ["@allonli/brave-news-mcp@latest"],
       "env": {
         "BRAVE_NEWS_TOKEN": "your_token_here"
       }
@@ -22,7 +22,7 @@ mcpServers:
   brave-news-mcp:
     command: npx
     args:
-      - brave-news-mcp@latest
+      - '@allonli/brave-news-mcp@latest'
     env:
       BRAVE_NEWS_TOKEN: your_token_here
 ```

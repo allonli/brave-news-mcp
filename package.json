@@ -1,5 +1,5 @@
 {
-  "name": "brave-news-mcp",
+  "name": "@allonli/brave-news-mcp",
   "version": "1.0.2",
   "type": "module",
   "main": "src/mcp.js",
