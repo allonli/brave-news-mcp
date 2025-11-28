@@ -1,0 +1,17 @@
+{
+  "name": "brave-news-mcp",
+  "displayName": "Brave News 汇总",
+  "description": "基于 Brave News API 搜索并汇总新闻，支持多参数过滤与结果聚合。",
+  "transport": "http",
+  "endpoint": "/mcp",
+  "health": "/health",
+  "port": 8000,
+  "capabilities": {
+    "tools": ["brave_news_search"]
+  },
+  "categories": ["搜索工具", "开发者工具"],
+  "tags": ["news", "brave", "search", "summarize"],
+  "env": ["BRAVE_NEWS_TOKEN"],
+  "license": "ISC"
+}
+

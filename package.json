@@ -1,0 +1,27 @@
+{
+  "name": "brave-news-mcp",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/mcp.js",
+  "scripts": {
+    "start:mcp": "node src/mcp.js",
+    "start:web": "node src/web.js",
+    "start:http": "node src/http-mcp.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.23.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.2.0",
+    "tsx": "^4.20.6"
+  }
+}
