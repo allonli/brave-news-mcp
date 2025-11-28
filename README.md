@@ -2,6 +2,52 @@
 
 基于 Brave News API 的 MCP 服务器，支持 HTTP（Streamable HTTP）与 stdio 传输，提供工具 `brave_news_search` 用于按查询参数拉取并汇总新闻。
 
+## ModelScope MCP 配置（自动解析）
+```json
+{
+  "modelscope_mcp": {
+    "name": "brave-news-mcp",
+    "displayName": "Brave News 汇总",
+    "description": "基于 Brave News API 搜索并汇总新闻，支持多参数过滤与结果聚合。",
+    "transport": "http",
+    "entry": "node src/http-mcp.js",
+    "endpoint": "/mcp",
+    "health": "/health",
+    "port": 8000,
+    "env": ["BRAVE_NEWS_TOKEN"],
+    "tools": ["brave_news_search"],
+    "categories": ["搜索工具", "开发者工具"],
+    "tags": ["news", "brave", "search", "summarize"],
+    "license": "ISC"
+  }
+}
+```
+
+```yaml
+modelscope_mcp:
+  name: brave-news-mcp
+  displayName: Brave News 汇总
+  description: 基于 Brave News API 搜索并汇总新闻，支持多参数过滤与结果聚合。
+  transport: http
+  entry: node src/http-mcp.js
+  endpoint: /mcp
+  health: /health
+  port: 8000
+  env:
+    - BRAVE_NEWS_TOKEN
+  tools:
+    - brave_news_search
+  categories:
+    - 搜索工具
+    - 开发者工具
+  tags:
+    - news
+    - brave
+    - search
+    - summarize
+  license: ISC
+```
+
 **MCP 服务配置（用于平台自动解析）**
 - 名称：`brave-news-mcp`
 - 传输：`http`
