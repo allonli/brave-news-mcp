@@ -7,18 +7,11 @@
 {
   "mcpServers": {
     "brave-news-mcp": {
-      "displayName": "Brave News 汇总",
-      "description": "基于 Brave News API 搜索并汇总新闻，支持多参数过滤与结果聚合。",
-      "transport": "http",
-      "entry": "node src/http-mcp.js",
-      "endpoint": "/mcp",
-      "health": "/health",
-      "port": 8000,
-      "env": ["BRAVE_NEWS_TOKEN"],
-      "tools": ["brave_news_search"],
-      "categories": ["搜索工具", "开发者工具"],
-      "tags": ["news", "brave", "search", "summarize"],
-      "license": "ISC"
+      "command": "node",
+      "args": ["src/mcp.js"],
+      "env": {
+        "BRAVE_NEWS_TOKEN": "your_token_here"
+      }
     }
   }
 }
@@ -27,35 +20,18 @@
 ```yaml
 mcpServers:
   brave-news-mcp:
-    displayName: Brave News 汇总
-    description: 基于 Brave News API 搜索并汇总新闻，支持多参数过滤与结果聚合。
-    transport: http
-    entry: node src/http-mcp.js
-    endpoint: /mcp
-    health: /health
-    port: 8000
+    command: node
+    args:
+      - src/mcp.js
     env:
-      - BRAVE_NEWS_TOKEN
-    tools:
-      - brave_news_search
-    categories:
-      - 搜索工具
-      - 开发者工具
-    tags:
-      - news
-      - brave
-      - search
-      - summarize
-    license: ISC
+      BRAVE_NEWS_TOKEN: your_token_here
 ```
 
-**MCP 服务配置（用于平台自动解析）**
-- 名称：`brave-news-mcp`
-- 传输：`http`
-- 端点：`/mcp`
-- 健康检查：`/health`
-- 端口：`8000`
-- 启动命令：`node src/http-mcp.js`
+**MCP 服务命令配置（用于平台自动解析）**
+- 顶层字段：`mcpServers`（对象）
+- 服务键：`brave-news-mcp`
+- 命令：`node`
+- 参数：`["src/mcp.js"]`
 - 环境变量：`BRAVE_NEWS_TOKEN`
 - 工具列表：`["brave_news_search"]`
 
@@ -93,8 +69,7 @@ mcp:
 ```
 
 **运行与验证**
-- 本地运行 HTTP MCP：`BRAVE_NEWS_TOKEN=... npm run start:http`（`/mcp`、`/health`）
-- 网页预览：`BRAVE_NEWS_TOKEN=... npm run start:web`（`http://localhost:3344/`）
+- 本地运行 MCP（stdio）：`BRAVE_NEWS_TOKEN=... npm run start:mcp`
 - 测试：`BRAVE_NEWS_TOKEN=... npm test`
 
 **部署到 ModelScope**
