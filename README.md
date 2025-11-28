@@ -7,8 +7,8 @@
 {
   "mcpServers": {
     "brave-news-mcp": {
-      "command": "node",
-      "args": ["src/mcp.js"],
+      "command": "npx",
+      "args": ["brave-news-mcp@latest"],
       "env": {
         "BRAVE_NEWS_TOKEN": "your_token_here"
       }
@@ -20,9 +20,9 @@
 ```yaml
 mcpServers:
   brave-news-mcp:
-    command: node
+    command: npx
     args:
-      - src/mcp.js
+      - brave-news-mcp@latest
     env:
       BRAVE_NEWS_TOKEN: your_token_here
 ```

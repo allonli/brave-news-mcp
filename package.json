@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "main": "src/mcp.js",
+  "bin": {
+    "brave-news-mcp": "src/cli.js"
+  },
+  "files": [
+    "src"
+  ],
   "scripts": {
     "start:mcp": "node src/mcp.js",
     "test": "echo 'no tests' && exit 0"
