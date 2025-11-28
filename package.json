@@ -1,6 +1,6 @@
 {
   "name": "brave-news-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "main": "src/mcp.js",
   "bin": {
@@ -19,7 +19,13 @@
     "type": "git",
     "url": "https://github.com/allonli/brave-news-mcp.git"
   },
-  "keywords": ["mcp","brave","news","search","summarize"],
+  "keywords": [
+    "mcp",
+    "brave",
+    "news",
+    "search",
+    "summarize"
+  ],
   "engines": {
     "node": ">=18"
   },
