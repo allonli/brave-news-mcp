@@ -5,9 +5,8 @@
 ## ModelScope MCP 配置（自动解析）
 ```json
 {
-  "mcpServers": [
-    {
-      "name": "brave-news-mcp",
+  "mcpServers": {
+    "brave-news-mcp": {
       "displayName": "Brave News 汇总",
       "description": "基于 Brave News API 搜索并汇总新闻，支持多参数过滤与结果聚合。",
       "transport": "http",
@@ -21,13 +20,13 @@
       "tags": ["news", "brave", "search", "summarize"],
       "license": "ISC"
     }
-  ]
+  }
 }
 ```
 
 ```yaml
 mcpServers:
-  - name: brave-news-mcp
+  brave-news-mcp:
     displayName: Brave News 汇总
     description: 基于 Brave News API 搜索并汇总新闻，支持多参数过滤与结果聚合。
     transport: http
