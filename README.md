@@ -5,47 +5,49 @@
 ## ModelScope MCP 配置（自动解析）
 ```json
 {
-  "modelscope_mcp": {
-    "name": "brave-news-mcp",
-    "displayName": "Brave News 汇总",
-    "description": "基于 Brave News API 搜索并汇总新闻，支持多参数过滤与结果聚合。",
-    "transport": "http",
-    "entry": "node src/http-mcp.js",
-    "endpoint": "/mcp",
-    "health": "/health",
-    "port": 8000,
-    "env": ["BRAVE_NEWS_TOKEN"],
-    "tools": ["brave_news_search"],
-    "categories": ["搜索工具", "开发者工具"],
-    "tags": ["news", "brave", "search", "summarize"],
-    "license": "ISC"
-  }
+  "mcpServers": [
+    {
+      "name": "brave-news-mcp",
+      "displayName": "Brave News 汇总",
+      "description": "基于 Brave News API 搜索并汇总新闻，支持多参数过滤与结果聚合。",
+      "transport": "http",
+      "entry": "node src/http-mcp.js",
+      "endpoint": "/mcp",
+      "health": "/health",
+      "port": 8000,
+      "env": ["BRAVE_NEWS_TOKEN"],
+      "tools": ["brave_news_search"],
+      "categories": ["搜索工具", "开发者工具"],
+      "tags": ["news", "brave", "search", "summarize"],
+      "license": "ISC"
+    }
+  ]
 }
 ```
 
 ```yaml
-modelscope_mcp:
-  name: brave-news-mcp
-  displayName: Brave News 汇总
-  description: 基于 Brave News API 搜索并汇总新闻，支持多参数过滤与结果聚合。
-  transport: http
-  entry: node src/http-mcp.js
-  endpoint: /mcp
-  health: /health
-  port: 8000
-  env:
-    - BRAVE_NEWS_TOKEN
-  tools:
-    - brave_news_search
-  categories:
-    - 搜索工具
-    - 开发者工具
-  tags:
-    - news
-    - brave
-    - search
-    - summarize
-  license: ISC
+mcpServers:
+  - name: brave-news-mcp
+    displayName: Brave News 汇总
+    description: 基于 Brave News API 搜索并汇总新闻，支持多参数过滤与结果聚合。
+    transport: http
+    entry: node src/http-mcp.js
+    endpoint: /mcp
+    health: /health
+    port: 8000
+    env:
+      - BRAVE_NEWS_TOKEN
+    tools:
+      - brave_news_search
+    categories:
+      - 搜索工具
+      - 开发者工具
+    tags:
+      - news
+      - brave
+      - search
+      - summarize
+    license: ISC
 ```
 
 **MCP 服务配置（用于平台自动解析）**
