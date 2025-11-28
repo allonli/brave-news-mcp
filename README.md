@@ -72,6 +72,15 @@ mcp:
 - 本地运行 MCP（stdio）：`BRAVE_NEWS_TOKEN=... npm run start:mcp`
 - 测试：`BRAVE_NEWS_TOKEN=... npm test`
 
+**发布到 npm（自动化）**
+- 在 GitHub 仓库中添加仓库密钥 `NPM_TOKEN`（npm 网站生成的发布令牌）
+- 推送标签触发发布：
+  - `npm version patch` 或 `npm version minor`
+  - `git push --tags`
+- 或手动触发工作流（Actions → Publish to npm → Run workflow）
+- 发布后可通过 ModelScope 的托管检测：
+  - `command: npx`, `args: ["brave-news-mcp@latest"]`
+
 **部署到 ModelScope**
 - 容器镜像（可选）：使用项目根目录 `Dockerfile`，入口 `node src/http-mcp.js`，端口 `8000`
 - 详细部署指引：见 `README-ModelScope.md`
