@@ -13,14 +13,20 @@
     "start:mcp": "node src/mcp.js",
     "test": "echo 'no tests' && exit 0"
   },
-  "description": "",
+  "description": "MCP server for Brave News search and summarization (stdio)",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/allonli/brave-news-mcp.git"
+  },
+  "keywords": ["mcp","brave","news","search","summarize"],
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.23.0",
     "dotenv": "^17.2.3",
     "zod": "^4.1.13"
   },
-  "devDependencies": {
-    
-  }
-}
+  "devDependencies": {}
 }
